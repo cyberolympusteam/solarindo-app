@@ -20,6 +20,8 @@ import TabReports from "./TabReports.js";
 import Details from "./Details.js";
 import ReportDetails from "./ReportDetails.js";
 import Main from "./Main.js";
+import Login from "./Login"
+import Profile from "./Profile"
 
 
 const Stack = createStackNavigator();
@@ -81,12 +83,29 @@ function App() {
 		<Stack.Screen name="Home" component={TabScreen} options={{ headerShown: false }}/>
 
 		{/* Page Navigation */}
-		<Stack.Screen name="Main" component={Main} options={{ headerShown: false }} />
-		<Stack.Screen name="Details" component={Details} options={Details.navigationOptions}/>
-		<Stack.Screen name="ReportDetails" component={ReportDetails} options={Details.navigationOptions}/>
-		<Stack.Screen name="Settings" component={TabSettings} />
-		<Stack.Screen name="Splashscreen" component={Splashscreen} options={{ headerShown: false }}/>
+    <Stack.Screen name="Profile" 
+                  component={Profile} 
+                  options={Profile.navigationOptions}/>
+		<Stack.Screen name="Main" 
+                  component={Main} 
+                  options={{ 
+                    headerShown: false 
+                  }} />
+		<Stack.Screen name="Details" 
+                  component={Details} 
+                  options={Details.navigationOptions}/>
+		<Stack.Screen name="ReportDetails" 
+                  component={ReportDetails} 
+                  options={Details.navigationOptions}/>
+		<Stack.Screen name="Settings" 
+                  component={TabSettings} />
+		<Stack.Screen name="Splashscreen" 
+                  component={Splashscreen} 
+                  options={{ headerShown: false }}/>
 
+    <Stack.Screen name="Login" 
+                  component={Login} 
+                  options={Login.navigationOptions}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

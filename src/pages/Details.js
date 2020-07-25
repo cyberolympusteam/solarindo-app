@@ -34,7 +34,7 @@ export default class Details extends React.Component {
 		}
 		
 		this.getLighting();
-		console.log(this.props.route.params.id)
+		console.log('dariprops', this.props.route.params.id)
         
     }
     
