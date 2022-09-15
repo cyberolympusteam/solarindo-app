@@ -1,13 +1,31 @@
-import React, {useEffect} from 'react';
-import Splashscreen from './Splashscreen.js';
+import React from 'react';
+import { AsyncStorage } from 'react-native';
+import Splashscreen from "./Splashscreen.js";
+import TabHome from "./TabHome.js";
 
-const Main = ({navigation}) => {
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.replace('Home');
-    }, 3000);
-  });
-  return <Splashscreen />;
-};
+export default class Main extends React.Component {
 
-export default Main;
+
+    UNSAFE_componentWillMount() {
+        this.setState({
+            view : <Splashscreen />
+        });
+
+
+        setTimeout(() => {
+            //IF FALSE NAVIGATE TO ERROR
+
+                this.setState({
+                    view : <TabHome/>
+                })
+        }, 2000) //TIME OF WAITING
+
+
+    }
+
+    render() {
+        return (
+            this.state.view
+        )
+    }
+}
